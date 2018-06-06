@@ -20,6 +20,27 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    var counter : Int = 0
+    @IBOutlet weak var touchCounter: UILabel!
+    
+    @IBAction func lightOnOff(_ sender: UIButton) {
+        
+        counter += 1
+        touchCounter.text = "\(counter) clicks"
+        
+        if sender.tag == 0 {
+            sender.setImage(UIImage(named: "Light On"), for: .normal)
+            
+            sender.tag = 1
+        }
+        else
+        {
+            sender.setImage(UIImage(named: "Light Off"), for: .normal)
+            
+            sender.tag = 0
+        }
+        
+        
+    }
 }
 
